@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ARADEV11 Styles */
+header.main-header {
+  width: 100vw;
+  height: 80vh;
+  min-height: 75vh;
+  background-color: red;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.hover-btn {
+  cursor: pointer;
+}
+
+.message-box {
+  z-index: 100000000;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+/* Footer Section */
+.copyright {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+}
+
+.ui.inverted.bg-image {
+  background-color: transparent !important;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://cutewallpaper.org/21/4k-gif-wallpaper/Gif-Background-1920x1080-4k-Elizabethporterdesigns.com.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui.secondary.inverted.pointing.menu,
+.ui.secondary.pointing.menu {
+  border: none !important;
+}
+
+/* Force Changes of MUI Design */
