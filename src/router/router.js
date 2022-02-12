@@ -12,7 +12,9 @@ import {
   Blog,
   AddPost,
   UploadFrom,
-  Gallery
+  Gallery,
+  Profile,
+  BlogPage
 } from "../pages";
 
 // Context Auth Provider
@@ -26,6 +28,7 @@ function Router() {
       <Routes>
         {/* Public Routes */}
         <Route index path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
 
         {/* Private Routes */}
         <Route element={<ProtectedRoute />}>
@@ -34,6 +37,7 @@ function Router() {
           <Route path="/blog/new" element={<AddPost />}/>
           <Route path='/api/gallery' element={<Gallery />} />
           <Route path='/api/gallery/add' element={<UploadFrom />} />
+          <Route path='/api/account/:id' element={<Profile />} />
         </Route>
 
 

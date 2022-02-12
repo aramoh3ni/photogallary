@@ -30,7 +30,7 @@ export const UploadFrom = () => {
 
   const fileTypes = ["image/png", "image/jpeg", "image/jpg"];
 
-  const { url, progress } = useStorage(file);
+  const { url, progress } = useStorage(file, "/files/images/");
 
   const InputView = (e) => {
      setInput(!input);

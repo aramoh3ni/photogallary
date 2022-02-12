@@ -37,7 +37,7 @@
       },
       {
         "id": 2,
-        "title": "Post Title"
+        "title": "Title"
       },
       {
         "id": 3,
@@ -45,7 +45,7 @@
       },
       {
         "id": 4,
-        "title": "Approved"
+        "title": "Author"
       },
       {
         "id": 5,
@@ -120,6 +120,26 @@
         "describe": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cupiditate eum necessitatibus suscipit praesentium iste asperiores, ullam rem, ut nostrum similique quibusdam est ducimus minus minima debitis impedit doloremque accusantium.",
         "approved": true,
         "pub_date": "2022-1-2"
+      }
+    ]
+  },
+  "images": {
+    "cols": [
+      {
+        "id": 2,
+        "title": "Title"
+      },
+      {
+        "id": 3,
+        "title": "Description"
+      },
+      {
+        "id": 4,
+        "title": "Author"
+      },
+      {
+        "id": 5,
+        "title": "Picture Teken On"
       }
     ]
   }

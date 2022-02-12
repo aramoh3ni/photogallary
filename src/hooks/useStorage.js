@@ -8,7 +8,7 @@ import {
 
 import { storage } from "../firebase/config";
 
-export const useStorage = (file) => {
+export const useStorage = (file, cRef) => {
   const [progress, setProgress] = useState(0);
   const [err, setErr] = useState(null);
   const [url, setUrl] = useState(null);
@@ -16,8 +16,9 @@ export const useStorage = (file) => {
   useEffect(() => {
     if (!file) return;
 
+    const path = cRef + file.name;
     // reference
-    const storageRef = strgRef(storage, `/files/image/${file.name}`);
+    const storageRef = strgRef(storage, path);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(

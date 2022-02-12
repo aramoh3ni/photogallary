@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useAuth } from "../../../Context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -25,10 +25,18 @@ const { Media } = createMedia({
 export function Navbar() {
   const { user, logOut } = useAuth();
 
-  // It should removed after creating Profile page
-    user.displayName = "Alireza Mohseni"
-    user.photoUR = "https://scontent.fkbl4-1.fna.fbcdn.net/v/t39.30808-6/267725676_3132783300332483_4951004511925131987_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=GzEeOKeZzYgAX8_hxIu&_nc_ht=scontent.fkbl4-1.fna&oh=00_AT8BQp570XDBgJBGmQaiknPRk9BBBQykisUr7wRZbIxLjA&oe=61EE5B3F"
-  // It should removed after creating Profile page
+  const [account, setAccount] = useState(user)
+
+
+
+  const ProfileOp = [
+    {
+      key: user.displayName,
+      text: user.displayName,
+      value: user.displayName,
+      image: { avatar: true, src: user.photoUrl },
+    },
+  ];
 
   const navigate = useNavigate();
 
@@ -41,6 +49,9 @@ export function Navbar() {
     }
   };
 
+  useEffect(() => {
+    setAccount(account)
+  }, [user])
 
   return (
     <Media greaterThan="mobile">
@@ -56,11 +67,11 @@ export function Navbar() {
                       <Icon name="dashboard blue" />
                       Dashboard
                     </Dropdown.Item>
-                    <Dropdown.Item>
+                    <Dropdown.Item as={Link} to={`/api/account/${user.uid}`}>
                       <Icon name="user circle outline blue" />
                       Account
                     </Dropdown.Item>
-                    
+
                     <Dropdown.Item>
                       <Icon name="image blue" />
                       <Dropdown text="Gallery">
@@ -112,9 +123,11 @@ export function Navbar() {
 
               <Menu.Item position="right">
                 <Dropdown
-                  icon="blue user"
-                  text={user.displayName}
                   pointing="top right"
+                  inline
+                
+                  options={ProfileOp}
+                  defaultValue={ProfileOp[0].value}
                 >
                   <Dropdown.Menu>
                     <Dropdown.Header>User Settings</Dropdown.Header>

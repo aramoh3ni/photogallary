@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 
 import { Header, Grid, Input, Button, Icon, Label } from "semantic-ui-react";
 
-export const ControlPanel = ({ title, rowsLength, handleView }) => {
+export const ControlPanel = ({ title, rowsLength, handelView }) => {
+
   const url = window.location.pathname;
+
 
   return (
     <Grid>
@@ -19,10 +21,10 @@ export const ControlPanel = ({ title, rowsLength, handleView }) => {
       </Grid.Column>
       <Grid.Column widescreen={2}>
         <Button.Group>
-          <Button onClick={() => handleView(true)}>
+          <Button onClick={(e) => handelView(e, true)}>
             <Icon name="grid layout" />
           </Button>
-          <Button onClick={() => handleView(false)}>
+          <Button onClick={(e) => handelView(e, false)}>
             <Icon name="list layout" />
           </Button>
         </Button.Group>

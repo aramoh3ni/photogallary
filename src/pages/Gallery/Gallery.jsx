@@ -5,7 +5,7 @@ import { db } from "../../firebase/config";
 
 import { HandelRemove } from "../../utils/utils";
 
-import { Container, Card, Segment, Loader } from "semantic-ui-react";
+import { Container, Card, Loader } from "semantic-ui-react";
 
 import { ControlPanel, Navbar, Tables, GridView } from "../../components";
 
@@ -14,21 +14,17 @@ import data from "../../mock/data.json";
 export const Gallery = () => {
   const [doc, setDoc] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { cols, rows } = data.postData;
-  const [open, setOpen] = useState(false);
-  const [view, setView] = useState(false);
+  const [view, setView] = useState(true);
 
-  const handelView = (value) => {
-    alert("hello")
-  };
-
-  const handelAddPost = (e) => {
-    alert("hello");
-    setOpen(true);
-  };
+  const { cols } = data.images;
 
   const handelDelete = (id) => {
     HandelRemove(id, "gallery");
+  };
+
+  const handelView = (e, value) => {
+    e.preventDefault()
+    setView(value);
   };
 
   useEffect(() => {
@@ -48,24 +44,19 @@ export const Gallery = () => {
       <Navbar />
 
       <Container style={{ marginTop: "2em" }}>
-        <ControlPanel
-          title={"Gallery Image"}
-          rowsLength={doc.length}
-          handelAddPost={handelAddPost}
-        />
-
-        <Tables columns={cols} rows={rows} />
+        <ControlPanel title={"Gallery Image"} handelView={handelView} rowsLength={doc.length} />
 
         {!isLoading ? (
           <Loader active />
-        ) : (
+        ) : view ? (
           <Card.Group itemsPerRow={4}>
             <GridView
               doc={doc}
               handelDelete={handelDelete}
-              handelView={handelView}
             />
           </Card.Group>
+        ) : (
+          <Tables columns={cols} rows={doc} />
         )}
       </Container>
     </>

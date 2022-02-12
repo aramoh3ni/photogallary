@@ -157,8 +157,9 @@ ResponsiveContainer.propTypes = {
  * components for such things.
  */
 export const HomepageHeading = ({ mobile }) => (
-  <div className="bg-header">
+  <div>
     <Container text>
+    {/* <div className="hero-bg" /> */}
     
       <Header
         as="h1"

@@ -6,34 +6,24 @@ export const Tables = (props) => {
   const { columns, rows } = props;
 
   return (
-    <Table>
+    <Table color="'teal'">
       <Table.Header>
         <Table.Row>
           {columns.map((item) => (
-            <Table.HeaderCell key={item.id}>{item.title}
-            </Table.HeaderCell>
+            <Table.HeaderCell key={item.id}>{item.title}</Table.HeaderCell>
           ))}
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
-        {rows.map((item) => (
-          <Table.Row key={item.id}>
-            <Table.Cell>{item.id}</Table.Cell>
+        {rows.map((item, i) => (
+          <Table.Row key={i}>
             <Table.Cell>{item.title.slice(0, 20)}...</Table.Cell>
-            <Table.Cell>{item.describe.slice(0, 50)}...</Table.Cell>
+            <Table.Cell>{item.description.slice(0, 50)}...</Table.Cell>
             <Table.Cell>
-              {item.approved ? (
-                <Label color="green" horizontal>
-                  Approved
-                </Label>
-              ) : (
-                <Label color="red" horizontal>
-                  Not Allowd
-                </Label>
-              )}
+              <a href="gooo">@ {item.user.displayName}</a>
             </Table.Cell>
-            <Table.Cell>{item.pub_date}</Table.Cell>
+            <Table.Cell>{item.dateTakenOn}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>

@@ -12,7 +12,7 @@ export const MobileNavItem = () => {
       </Menu.Item>
       <Menu.Item as="a">Home</Menu.Item>
       <Menu.Item as="a">About</Menu.Item>
-      <Menu.Item as="a">Blog</Menu.Item>
+      <Menu.Item as={Link} to='/blog'>Blog</Menu.Item>
       <Menu.Item as="a">Gallery</Menu.Item>
       <Menu.Item as={Link} to="/api/auth/sign-in">
         Sign in
@@ -30,8 +30,9 @@ export const DesktopNavItem = ({ fixed }) => {
       <Menu.Item as="a" active>
         Home
       </Menu.Item>
-      <Menu.Item as="a">About</Menu.Item>
       <Menu.Item as="a">Gallery</Menu.Item>
+      <Menu.Item as="a">About</Menu.Item>
+      <Menu.Item as={Link} to='/blog'>Blog</Menu.Item>
       <Menu.Item as="a">Contact us</Menu.Item>
       <Menu.Item position="right">
         <Button

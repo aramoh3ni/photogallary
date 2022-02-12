@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Mochiy+Pop+P+One&family=Nunito:wght@200&display=swap");
+
+:root {
+  /* Palette */
+  --white-color: #fff;
+  --black-color: #42413d;
+  --red-color: #f54842;
+  --gray-dark-color: #d6d5d2;
+  --green-color: #20ae44;
+  --yellow-color: #fae361;
+
+  /* App Theme / Brand */
+  --main-color: #104993;
+}
 
 *,
 *::after,
@@ -7,13 +20,87 @@
   padding: 0px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.content-title {
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+.title {
+  color: var(--white-color) !important;
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+h1 {
+  font-size: 5em;
+}
+h2 {
+  font-size: 4em;
+}
+h3 {
+  font-size: 3em;
+}
+h4 {
+  font-size: 2em;
+}
+h5 {
+  font-size: 1em;
+}
+h6 {
+  font-size: 0.5em;
+}
+p {
+  font-size: 1.2em;
+}
+
+.content-title,
+.content,
+button {
+  color: var(--white-color);
+}
+
+.input-form input,
+.input-form textarea {
+  background: none !important;
+  border: 2px solid white !important;
+  border-radius: 50px !important;
+  color: var(--white-color) !important;
+  padding-left: 2em !important;
+}
+
+.input-form label {
+  color: var(--white-color);
+}
+
+
+body {
+  background-color: var(--main-color);
+  font-family: "Nunito", sans-serif;
+  color: var(--white-color);
+}
+
 /* ARADEV11 Styles */
 header.main-header {
   width: 100vw;
   height: 80vh;
   min-height: 75vh;
   background-color: red;
-  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.social {
+  margin-top: 4em;
+}
+
+.title {
+  color: var(--white-color);
+}
+
+.sub-title {
+  color: var(--main-color);
 }
 
 .hover-btn {
@@ -33,15 +120,45 @@ header.main-header {
   font-size: 13px;
 }
 
-.ui.inverted.bg-image {
-  background-color: transparent !important;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://cutewallpaper.org/21/4k-gif-wallpaper/Gif-Background-1920x1080-4k-Elizabethporterdesigns.com.gif');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+/* Force Changes of MUI Design */
+
+/* Hero Style */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.ui.secondary.inverted.pointing.menu,
-.ui.secondary.pointing.menu {
-  border: none !important;
+.hero-bg {
+  transform: rotate(-5deg);
+  /* background-color: var(--white-color); */
+  height: 90%;
+  width: 120vw;
+  border-radius: 0px 0px 30% 15%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  bottom: 0%;
+  background: linear-gradient(
+    -45deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #ffffff 50%,
+    #886bcc 62%,
+    #9371f1 75%,
+    #6989f3 87%,
+    #78abf7 100%
+  );
+  background-size: 400% 400%;
+  animation: animate 7.5s ease-in-out infinite;
 }
 
-/* Force Changes of MUI Design */
+/* Navbar Style */
+.navbar {
+  z-index: 1000;
+  position: relative;
+  top: 10px;
+  width: 100%;
+}

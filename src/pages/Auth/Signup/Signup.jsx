@@ -17,8 +17,9 @@ export const Signup = () => {
   const { signUp } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmPass, setConfirmPass] = useState(null);
   const [err, setErr] = useState({
     message: "",
     type: false,
@@ -28,17 +29,24 @@ export const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await signUp(email, password);
+    if(password !== confirmPass) {
       setErr({
-        message: "Your Account Have Been Successfull Created",
-        type: true,
-      });
-      navigate("/api/auth/sign-in");
-      setEmail("");
-      setPassword("");
-    } catch (err) {
-      setErr({ message: err.message, type: false });
+        message: "Password Not Match",
+        type: false
+      })
+    } else {
+      try {
+        await signUp(email, password);
+        setErr({
+          message: "Your Account Have Been Successfull Created",
+          type: true,
+        });
+        navigate("/api/auth/sign-in");
+        setEmail("");
+        setPassword("");
+      } catch (err) {
+        setErr({ message: err.message, type: false });
+      }
     }
   };
 
@@ -82,16 +90,16 @@ export const Signup = () => {
               required={true}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {/* <Form.Input
+            <Form.Input
               fluid
               icon="lock"
               iconPosition="left"
-              placeholder="Re-Password"
+              placeholder="Confirm Your Password"
               type="password"
               required={true}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setConfirmPass(e.target.value)}
 
-            /> */}
+            />
 
             <Button color="teal" fluid size="large">
               Login
