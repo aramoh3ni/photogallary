@@ -10,10 +10,12 @@ export const ContactForm = () => {
         <Form.Input
           className="input-form"
           inverted={false}
-          placeholder="Last name"
+          placeholder="Email Address"
+          type='email'
           required
         />
       </Form.Group>
+      
       <Form.Input
         className="input-form"
         inverted={false}

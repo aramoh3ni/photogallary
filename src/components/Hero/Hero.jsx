@@ -5,8 +5,8 @@ import HeroImage from "../../assets/hero/undraw_photo_session_clqr.svg";
 
 import { Navbar } from "../Navbar/Navbar";
 
-export const Hero = (props) => {
-  const { title, subTile, image, childern } = props;
+export const Hero = ({ title, subTile, image, childern }) => {
+  
 
   return (
     <>
@@ -19,10 +19,10 @@ export const Hero = (props) => {
                 <Image size="huge" src={HeroImage} />
               </Grid.Column>
               <Grid.Column width={8}>
-                <h1 className="title">
+                <h1>
                   Ali Madad <br /> <span className="sub-title">Nawid</span>
                 </h1>
-                <h5>Afghan Phtographer</h5>
+                <h4 className="content-title">Afghan Phtographer</h4>
                 <div className="social">
                   <List horizontal size='huge'>
                     <List.Item

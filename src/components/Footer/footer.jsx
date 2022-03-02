@@ -6,14 +6,16 @@ import {
   Header,
   List,
   Button,
-  Label,
+  Icon,
 } from "semantic-ui-react";
 
 export const Footer = () => {
   return (
-    <Segment inverted vertical style={{ padding: "5em 0em 2em 0em" }}>
+    <Segment vertical style={{ padding: "20em 0em 2em 0em" }} className='footer-main'>
+      <div className="footer-bg" />
+      
       <Container>
-        <Grid divided inverted stackable>
+        <Grid inverted stackable>
           <Grid.Row>
             <Grid.Column width={7}>
               <Header inverted as="h4" content="About" />
@@ -25,7 +27,7 @@ export const Footer = () => {
                 language ocean...
               </p>
               <div>
-                <Header inverted as="h4" content="Follow Me On" />
+                <Header  as="h4" content="Follow Me On" />
                 <Button circular color="facebook" icon="facebook" />
                 <Button circular color="twitter" icon="twitter" />
                 <Button circular color="linkedin" icon="linkedin" />
@@ -33,16 +35,21 @@ export const Footer = () => {
               </div>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="Site Map" />
-              <List link inverted>
-                <List.Item as="a">Home</List.Item>
-                <List.Item as="a">About</List.Item>
-                <List.Item as="a">Gallery</List.Item>
-                <List.Item as="a">Contact</List.Item>
+              <Header  as="h4" content="Site Map" />
+              <List link selection animated >
+                <List.Item as="a" style={{color:"white"}}>
+                  <Icon name='home' />
+                  <List.Content>
+                  Home
+                  </List.Content>
+                </List.Item>
+                <List.Item as="a" style={{color:"white"}}>About</List.Item>
+                <List.Item as="a" style={{color:"white"}}>Gallery</List.Item>
+                <List.Item as="a" style={{color:"white"}}>Contact</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header as="h4" inverted>
+              <Header as="h4" >
                 Footer Header
               </Header>
               <p>

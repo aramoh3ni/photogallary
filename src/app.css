@@ -5,7 +5,7 @@
   --white-color: #fff;
   --black-color: #42413d;
   --red-color: #f54842;
-  --gray-dark-color: #d6d5d2;
+  --gray-dark-color: #ffffffb6;
   --green-color: #20ae44;
   --yellow-color: #fae361;
 
@@ -26,12 +26,19 @@ h3,
 h4,
 h5,
 h6,
-.content-title {
-  font-family: "Mochiy Pop P One", sans-serif;
-}
 .title {
   color: var(--white-color) !important;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.sub-title {
+  color: var(--gray-dark-color) !important;
+  font-weight: 900;
+}
+
+.content-title {
   font-family: "Josefin Sans", sans-serif !important;
+
 }
 
 h1 {
@@ -120,7 +127,6 @@ header.main-header {
   font-size: 13px;
 }
 
-/* Force Changes of MUI Design */
 
 /* Hero Style */
 .hero {
@@ -129,28 +135,31 @@ header.main-header {
   align-items: center;
   justify-content: space-around;
 }
+
 .hero-bg {
   transform: rotate(-5deg);
   /* background-color: var(--white-color); */
-  height: 90%;
+  height: 100%;
   width: 120vw;
   border-radius: 0px 0px 30% 15%;
   position: absolute;
   top: -10%;
   left: -10%;
   bottom: 0%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     -45deg,
     #3f51b1 0%,
     #5a55ae 13%,
     #7b5fac 25%,
     #8f6aae 38%,
-    #ffffff 50%,
+    #ffffff 0%,
     #886bcc 62%,
     #9371f1 75%,
     #6989f3 87%,
     #78abf7 100%
-  );
+  ); */
+  background-image: linear-gradient(to right top, hsla(0, 5%,5%, 0.5), hsla(0, 0%, 15%,1));
+  background-image:-moz-linear-gradient(to right top, hsla(0, 5%,5%, 0.5), hsla(0, 0%, 15%,1));
   background-size: 400% 400%;
   animation: animate 7.5s ease-in-out infinite;
 }
@@ -162,3 +171,75 @@ header.main-header {
   top: 10px;
   width: 100%;
 }
+
+
+/* Footer Styles */
+.footer-main {
+  overflow: hidden;
+  color: var(--white-color);
+  position: fixed;
+}
+.footer-bg {
+  transform: rotate(5deg);
+  /* background-color: var(--white-color); */
+  height: 100%;
+  width: 120vw;
+  border-radius: 15% 30% 0% 0%;
+  position: absolute;
+  top: 25%;
+  left: -10%;
+  bottom: 0;
+  right: 0;
+  /* background: linear-gradient(
+    -45deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #ffffff 0%,
+    #886bcc 62%,
+    #9371f1 75%,
+    #6989f3 87%,
+    #78abf7 100%
+  ); */
+  background-image: linear-gradient(to right top, hsla(0, 5%,5%, 0.5), hsla(0, 0%, 15%,1));
+  background-image:-moz-linear-gradient(to right top, hsla(0, 5%,5%, 0.5), hsla(0, 0%, 15%,1));
+  z-index: -100;
+  background-size: 400% 400%;
+  animation: animate 7.5s ease-in-out infinite;
+  box-shadow: 20px 20px 50px 10px hsla(0, 5%,5%, 0.5) ;
+}
+
+.ui.vertical.segment {
+  border: none !important;
+}
+
+
+/* Gallery Grid Style */
+
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.img-warp {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-warp img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Gallery Grid Style */

@@ -8,7 +8,7 @@ export const Navbar = () => {
   const handleItemClick = (e, { name }) => setName({ activeItem: name });
 
   return (
-      <Container className="navbar">
+      <Container className="navbar top fixed">
         <Menu >
 
           <Menu.Item header>Our Company</Menu.Item>
